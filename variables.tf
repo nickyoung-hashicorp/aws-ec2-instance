@@ -17,3 +17,8 @@ variable "name" {
   description = "name to pass to Name tag"
   default = "nyoung-TFC-demo"
 }
+
+variable "owner" {
+  description = "owner of provisioned resource"
+  default = "hashicorp"
+}
