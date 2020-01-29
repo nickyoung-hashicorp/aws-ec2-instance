@@ -12,7 +12,6 @@ resource "aws_instance" "ubuntu" {
   ami           = var.ami_id
   instance_type = var.instance_type
   tags = {
-    Name = var.name
-    owner = var.owner
+    // Name = var.name
   }
 }
