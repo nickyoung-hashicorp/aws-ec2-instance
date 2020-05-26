@@ -15,7 +15,7 @@ variable "instance_type" {
 
 variable "name" {
   description = "name to pass to Name tag"
-  default = "nyoung-TFC-demo"
+  default = "nyoung-tfe-demo"
 }
 
 variable "owner" {
