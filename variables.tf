@@ -9,8 +9,13 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-  description = "type of EC2 instance to provision."
+  description = "type of EC2 instance to provision"
   default = "t2.micro"
+}
+
+variable "count" {
+  description = "number of EC2 instances to provision"
+  default = 1
 }
 
 variable "name" {
