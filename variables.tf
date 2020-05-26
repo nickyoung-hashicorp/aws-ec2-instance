@@ -13,9 +13,9 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "name" {
+variable "Name" {
   description = "name to pass to Name tag"
-  default = "nyoung-TFC-demo"
+  default = "nyoung-tfe-demo"
 }
 
 variable "owner" {
