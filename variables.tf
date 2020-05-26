@@ -13,7 +13,7 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "Name" {
+variable "name" {
   description = "name to pass to Name tag"
   default = "nyoung-tfe-demo"
 }
