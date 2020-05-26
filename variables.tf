@@ -13,7 +13,7 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "count" {
+variable "number_instances" {
   description = "number of EC2 instances to provision"
   default = 1
 }
