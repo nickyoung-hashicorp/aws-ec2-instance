@@ -9,11 +9,10 @@ provider "aws" {
 }
 
 resource "aws_instance" "ubuntu" {
-  count         = var.number_instances
   ami           = var.ami_id
   instance_type = var.instance_type
   tags = {
-    Name = "${var.name}-prod"
+    Name = "${var.name}-dev"
     owner = var.owner
   }
 }
