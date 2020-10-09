@@ -22,13 +22,3 @@ variable "owner" {
   description = "owner of provisioned resource"
   default     = "hashicorp"
 }
-
-variable "allowed_account_ids" {
-  description = "allowed account ids"
-  default     = ["711129375688"]
-}
-
-variable "user_account_role_arn" {
-  description = "role arn"
-  default     = "arn:aws:iam::711129375688:role/se_demos_dev-developer/nyoung@hashicorp.com"
-}
