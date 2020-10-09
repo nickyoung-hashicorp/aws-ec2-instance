@@ -115,7 +115,7 @@ resource "aws_eip_association" "hashicat" {
   allocation_id = aws_eip.hashicat.id
 }
 
-# Using module "aws-instance" instead
+# Using module "aws_instance" instead
 # resource aws_instance "hashicat" {
 #   ami                         = data.aws_ami.ubuntu.id
 #   instance_type               = var.instance_type
@@ -130,7 +130,7 @@ resource "aws_eip_association" "hashicat" {
 # }
 
 
-module "aws-instance" {
+module "aws_instance" {
   source  = "app.terraform.io/nickyoung-hashicorp/aws-instance/aws"
   version = "1.0.0"
   # insert required variables here
