@@ -22,3 +22,7 @@ variable "owner" {
   description = "owner of provisioned resource"
   default     = "hashicorp"
 }
+
+variable "allowed_account_ids" {
+  description = "allowed account ids"
+  default     = "711129375688"
