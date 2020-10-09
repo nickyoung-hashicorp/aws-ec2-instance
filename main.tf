@@ -22,44 +22,44 @@ resource aws_subnet "hashicat" {
   }
 }
 
-resource aws_security_group "hashicat" {
-  name = "hashicat-security-group"
+# resource aws_security_group "hashicat" {
+#   name = "hashicat-security-group"
 
-  vpc_id = aws_vpc.hashicat.id
+#   vpc_id = aws_vpc.hashicat.id
 
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+#   ingress {
+#     from_port   = 22
+#     to_port     = 22
+#     protocol    = "tcp"
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
 
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+#   ingress {
+#     from_port   = 80
+#     to_port     = 80
+#     protocol    = "tcp"
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
 
-  ingress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+#   ingress {
+#     from_port   = 443
+#     to_port     = 443
+#     protocol    = "tcp"
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
 
-  egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = ["0.0.0.0/0"]
-    prefix_list_ids = []
-  }
+#   egress {
+#     from_port       = 0
+#     to_port         = 0
+#     protocol        = "-1"
+#     cidr_blocks     = ["0.0.0.0/0"]
+#     prefix_list_ids = []
+#   }
 
-  tags = {
-    Name = "hashicatsecurity-group"
-  }
-}
+#   tags = {
+#     Name = "hashicatsecurity-group"
+#   }
+# }
 
 # resource random_id "app-server-id" {
 #   prefix      = "${var.prefix}-hashicat-"
@@ -88,22 +88,22 @@ resource aws_security_group "hashicat" {
 #   route_table_id = aws_route_table.hashicat.id
 # }
 
-data aws_ami "ubuntu" {
-  most_recent = true
+# data aws_ami "ubuntu" {
+#   most_recent = true
 
-  filter {
-    name = "name"
-    #values = ["ubuntu/images/hvm-ssd/ubuntu-disco-19.04-amd64-server-*"]
-    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
-  }
+#   filter {
+#     name = "name"
+#     #values = ["ubuntu/images/hvm-ssd/ubuntu-disco-19.04-amd64-server-*"]
+#     values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
+#   }
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
+#   filter {
+#     name   = "virtualization-type"
+#     values = ["hvm"]
+#   }
 
-  owners = ["099720109477"] # Canonical
-}
+#   owners = ["099720109477"] # Canonical
+# }
 
 # resource "aws_eip" "hashicat" {
 #   instance = aws_instance.hashicat.id
