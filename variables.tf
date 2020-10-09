@@ -25,5 +25,5 @@ variable "owner" {
 
 variable "allowed_account_ids" {
   description = "allowed account ids"
-  default     = "711129375688"
+  default     = "[711129375688]"
 }
