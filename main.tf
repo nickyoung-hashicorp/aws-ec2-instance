@@ -132,7 +132,7 @@ data aws_ami "ubuntu" {
 
 module "aws_instance" {
   source  = "app.terraform.io/nickyoung-hashicorp/aws-instance/aws"
-  version = "1.0.1"
+  version = "1.0.2"
   # insert required variables here
   security_group_ids = aws_security_group.hashicat.id
 }
