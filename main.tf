@@ -1,12 +1,7 @@
 # hulu-sentinel-test
 
 provider "aws" {
-  version             = "~> 2.0"
   region              = var.aws_region
-  allowed_account_ids = var.allowed_account_ids
-  assume_role {
-    role_arn = var.user_account_role_arn
-  }
 }
 
 resource "aws_instance" "ubuntu" {
