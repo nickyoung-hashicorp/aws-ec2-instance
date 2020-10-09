@@ -9,7 +9,7 @@ resource aws_vpc "hashicat" {
   enable_dns_hostnames = true
 
   tags = {
-    name = "${var.prefix}-vpc"
+    name = "hashicat-vpc"
   }
 }
 
@@ -57,36 +57,36 @@ resource aws_security_group "hashicat" {
   }
 
   tags = {
-    Name = "${var.prefix}-security-group"
+    Name = "hashicatsecurity-group"
   }
 }
 
-resource random_id "app-server-id" {
-  prefix      = "${var.prefix}-hashicat-"
-  byte_length = 8
-}
+# resource random_id "app-server-id" {
+#   prefix      = "${var.prefix}-hashicat-"
+#   byte_length = 8
+# }
 
-resource aws_internet_gateway "hashicat" {
-  vpc_id = aws_vpc.hashicat.id
+# resource aws_internet_gateway "hashicat" {
+#   vpc_id = aws_vpc.hashicat.id
 
-  tags = {
-    Name = "${var.prefix}-internet-gateway"
-  }
-}
+#   tags = {
+#     Name = "${var.prefix}-internet-gateway"
+#   }
+# }
 
-resource aws_route_table "hashicat" {
-  vpc_id = aws_vpc.hashicat.id
+# resource aws_route_table "hashicat" {
+#   vpc_id = aws_vpc.hashicat.id
 
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.hashicat.id
-  }
-}
+#   route {
+#     cidr_block = "0.0.0.0/0"
+#     gateway_id = aws_internet_gateway.hashicat.id
+#   }
+# }
 
-resource aws_route_table_association "hashicat" {
-  subnet_id      = aws_subnet.hashicat.id
-  route_table_id = aws_route_table.hashicat.id
-}
+# resource aws_route_table_association "hashicat" {
+#   subnet_id      = aws_subnet.hashicat.id
+#   route_table_id = aws_route_table.hashicat.id
+# }
 
 data aws_ami "ubuntu" {
   most_recent = true
