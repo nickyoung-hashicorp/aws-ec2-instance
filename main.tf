@@ -134,10 +134,7 @@ module "aws-instance" {
   source  = "app.terraform.io/nickyoung-hashicorp/aws-instance/aws"
   version = "1.0.0"
   # insert required variables here
-  subnet_id                   = aws_subnet.hashicat.id
-  tags = {
-    Name = "${var.prefix}-hashicat-instance"
-  }
+  security_group_ids = aws_security_group.hashicat.id
 }
 
 # resource "aws_instance" "ubuntu" {
