@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource aws_vpc "hashicat" {
-  cidr_block           = var.address_space
+  cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
 
   tags = {
@@ -18,12 +18,12 @@ resource aws_subnet "hashicat" {
   cidr_block = var.subnet_prefix
 
   tags = {
-    name = "${var.prefix}-subnet"
+    name = "hashicat-subnet"
   }
 }
 
 resource aws_security_group "hashicat" {
-  name = "${var.prefix}-security-group"
+  name = "hashicat-security-group"
 
   vpc_id = aws_vpc.hashicat.id
 
@@ -105,15 +105,15 @@ data aws_ami "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_eip" "hashicat" {
-  instance = aws_instance.hashicat.id
-  vpc      = true
-}
+# resource "aws_eip" "hashicat" {
+#   instance = aws_instance.hashicat.id
+#   vpc      = true
+# }
 
-resource "aws_eip_association" "hashicat" {
-  instance_id   = aws_instance.hashicat.id
-  allocation_id = aws_eip.hashicat.id
-}
+# resource "aws_eip_association" "hashicat" {
+#   instance_id   = aws_instance.hashicat.id
+#   allocation_id = aws_eip.hashicat.id
+# }
 
 # Using module "aws_instance" instead
 # resource aws_instance "hashicat" {
