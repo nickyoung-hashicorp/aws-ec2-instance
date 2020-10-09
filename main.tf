@@ -5,14 +5,16 @@ terraform {
 }
 
 provider "aws" {
-  region = var.aws_region
+  version             = "~> 2.0"
+  region              = var.aws_region
+  allowed_account_ids = var.allowed_account_ids
 }
 
 resource "aws_instance" "ubuntu" {
   ami           = var.ami_id
   instance_type = var.instance_type
   tags = {
-    Name = "${var.name}-master"
+    Name  = "${var.name}-master"
     owner = var.owner
   }
 }
