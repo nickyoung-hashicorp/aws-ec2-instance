@@ -132,9 +132,9 @@ resource aws_subnet "hashicat" {
 
 module "aws_instance" {
   source  = "app.terraform.io/nickyoung-hashicorp/aws-instance/aws"
-  version = "1.0.2"
+  version = "1.0.3"
   # insert required variables here
-  security_group_ids = aws_security_group.hashicat.id
+  security_group_ids = ["sg-a5f24bf1"]
 }
 
 # resource "aws_instance" "ubuntu" {
