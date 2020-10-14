@@ -1,8 +1,4 @@
-# master
-
-terraform {
-  required_version = ">= 0.11.0"
-}
+# Default Branch
 
 provider "aws" {
   region = var.aws_region
