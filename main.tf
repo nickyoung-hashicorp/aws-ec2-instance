@@ -7,8 +7,8 @@ provider "aws" {
 resource "aws_instance" "ubuntu" {
   ami           = var.ami_id
   instance_type = var.instance_type
-#   tags = {
-#     Name = "aws-ec2-instance_prod"
-#     owner = "nyoung@hashicorp.com"
-#   }
+  tags = {
+    Name = "aws-ec2-instance_prod"
+    Owner = "nyoung@hashicorp.com"
+  }
 }
