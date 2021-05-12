@@ -9,6 +9,6 @@ resource "aws_instance" "ubuntu" {
   instance_type = var.instance_type
   tags = {
     Name = "aws-ec2-instance_prod"
-    Owner = "nyoung@hashicorp.com"
+    owner = "nyoung@hashicorp.com"
   }
 }
