@@ -10,6 +10,6 @@ resource "aws_instance" "ubuntu" {
   tags = {
     Name = "aws-ec2-instance_prod"
     owner = "nyoung@hashicorp.com"
-    ttl = "-1"
+#     ttl = "-1"
   }
 }
